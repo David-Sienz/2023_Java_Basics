@@ -44,10 +44,11 @@ public class Bankomat_Beispiel {
             }
 
             if (number == 4){
-                System.out.println("Maschine stoppt!");
+                System.out.println("Auf Wiedersehen!");
                 isRunning = false;
             }
 
         }
+        scanner.close();
     }
 }
