@@ -28,7 +28,7 @@ public class Bankomat_Beispiel {
                 number = scanner.nextInt();
 
                 Kontostand = Kontostand + number;
-                System.out.println("Sie haben " + Kontostand + " Euro eingezahlt.");
+                System.out.println("Sie haben " + number + " Euro eingezahlt.");
             }
 
             if (number == 2){
@@ -36,7 +36,7 @@ public class Bankomat_Beispiel {
                 number = scanner.nextInt();
 
                 Kontostand = Kontostand - number;
-                System.out.println("Sie haben " + Kontostand + " Euro abgehoben");
+                System.out.println("Sie haben " + number + " Euro abgehoben");
             }
 
             if (number == 3){
