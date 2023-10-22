@@ -6,11 +6,11 @@ public class CaesarCipherMain {
         int shift = 3;
 
         System.out.println("Das Wort, welches verschlüsselt werden soll ist: " + data);
-        System.out.println("---------------------------------------------------------");
+        System.out.println("----------------------------------------------------------");
 
         String encryptedData = CaesarCipherEncrypt.encrypt(data, shift);
         System.out.println("Das verschlüsselte Wort ist: " + encryptedData);
-        System.out.println("---------------------------------------------------------");
+        System.out.println("----------------------------------------------------------");
 
         String decryptedData = CaesarCipherDecrypt.decrypt(encryptedData, shift);
         System.out.println("Das entschlüsselte Wort ist: " + decryptedData);
