@@ -12,12 +12,13 @@ public class Main {
         boolean isPalindrome = StringHelper.isPalindrome(text);
         System.out.println("Der Text ist ein Palindrom: " + isPalindrome);
 
-        int countLetters = StringHelper.countLetters(text, 'a');
+        int countLetters = StringHelper.countLetters(text);
         System.out.println("Die Anzahl der Buchstaben ist: " + countLetters);
 
         String reverseString = StringHelper.reverseString(text);
         System.out.println("Der Text wird ... rückwerts geschrieben: " + reverseString);
 
+        StringHelper.printAmountOfLetters(text);
 
         scanner.close();
     }
