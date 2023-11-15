@@ -4,19 +4,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class WordGuesser {
-    private Random random = new Random();
-    private Scanner scanner = new Scanner(System.in);
-    private boolean gameIsRunning = true;
-    private String[] words = {"java", "english", "german", "basketball", "counter", "strike"};
-    private String secretWord;
-    private String currentGuess;
-
     public static void main(String[] args) {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        boolean gameIsRunning = true;
+        String[] words = {"java", "english", "german", "basketball", "counter", "strike"};
+        String secretWord = "";
+        String currentGuess = "";
+
         WordGuesser wordGuesser = new WordGuesser();
-        wordGuesser.showMenu();
+        wordGuesser.showMenu(random, scanner, gameIsRunning, words, secretWord, currentGuess);
     }
 
-    private void showMenu() {
+    private void showMenu(Random random, Scanner scanner, boolean gameIsRunning, String[] words, String secretWord, String currentGuess) {
         System.out.println("Willkommen beim Wortraten-Spiel!");
         System.out.println("1. Neues Spiel starten");
         System.out.println("2. Spiel beenden");
@@ -25,7 +25,7 @@ public class WordGuesser {
 
         switch (choice) {
             case 1:
-                startGame();
+                startGame(random, scanner, gameIsRunning, words, secretWord, currentGuess);
                 break;
             case 2:
                 System.out.println("Auf Wiedersehen!");
@@ -33,11 +33,11 @@ public class WordGuesser {
                 break;
             default:
                 System.out.println("Ungültige Auswahl. Bitte wählen Sie 1 oder 2.");
-                showMenu();
+                showMenu(random, scanner, gameIsRunning, words, secretWord, currentGuess);
         }
     }
 
-    private void startGame() {
+    private void startGame(Random random, Scanner scanner, boolean gameIsRunning, String[] words, String secretWord, String currentGuess) {
 
     }
 }
