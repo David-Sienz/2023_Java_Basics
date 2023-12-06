@@ -10,6 +10,8 @@ public class Main {
         c1.serialNumber = "A1234";
         c1.fuelAmount = 70;
         c1.color = "red";
+        c1.tankVolume = 100;
+        c1.honk(3);
 
         Car c2 = new Car();
         c2.brand = "Mercedes";
@@ -17,6 +19,8 @@ public class Main {
         c2.serialNumber = "M1234";
         c2.fuelAmount = 20;
         c2.color = "black";
+        c2.tankVolume = 120;
+        c2.honk(2);
 
         System.out.println(c2.fuelAmount);
         c2.drive();
@@ -24,5 +28,7 @@ public class Main {
         c2.brake();
         System.out.println(c2.fuelAmount);
 
+        c1.honk(4);
+        c1.getRemainingRange();
     }
 }
