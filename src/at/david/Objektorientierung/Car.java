@@ -13,6 +13,11 @@ public class Car {
         private double remainingDistance;
 
 
+        public Car(int fc, String b, String s){
+                this.fuelConsumption =fc;
+                this.brand =b;
+                this.serialNumber=s;
+        }
 
         public void drive(){
                 this.fuelAmount = this.fuelAmount - fuelConsumption;
