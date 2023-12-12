@@ -13,11 +13,14 @@ public class Car {
     private double remainingDistance;
 
 
-       /*public Car(int fc, String b, String s){
-                this.fuelConsumption =fc;
-                this.brand =b;
-                this.serialNumber=s;
-        }*/
+    public Car(int fuelConsumption, int fuelAmount, String brand, String serialNumber, String color, int tankVolume) {
+        this.fuelConsumption = fuelConsumption;
+        this.fuelAmount = fuelAmount;
+        this.brand = brand;
+        this.serialNumber = serialNumber;
+        this.color = color;
+        this.tankVolume = tankVolume;
+    }
 
     public void drive() {
         this.fuelAmount = this.fuelAmount - fuelConsumption;
@@ -29,8 +32,8 @@ public class Car {
     }
 
     public void turboBoost() {
-        if (fuelAmount > tankVolume * 0.9) {
-            System.out.println("SuperBoostMode is off.");
+        if (fuelAmount > tankVolume * 0.1) {
+            System.out.println("SuperBoostMode is on.");
         } else {
             System.out.println("Not enough fuel to go to Superboost.");
         }
@@ -43,7 +46,7 @@ public class Car {
     }
 
     public void getRemainingRange() {
-        this.remainingDistance = this.fuelAmount / this.fuelConsumption;
+        this.remainingDistance = (double) this.fuelAmount / this.fuelConsumption;
         System.out.println("You have " + remainingDistance + " kilometres left!");
     }
 
