@@ -3,7 +3,7 @@ package at.david.Objektorientierung;
 public class Car {
     //Instanz / Gedächtnisvariablen
 
-    //don't do that later
+    private Engine engine;
     private int fuelConsumption;
     private int fuelAmount;
     private int tankVolume;
@@ -13,7 +13,8 @@ public class Car {
     private double remainingDistance;
 
 
-    public Car(int fuelConsumption, int fuelAmount, String brand, String serialNumber, String color, int tankVolume) {
+    public Car(Engine engine, int fuelConsumption, int fuelAmount, String brand, String serialNumber, String color, int tankVolume) {
+        this.engine = engine;
         this.fuelConsumption = fuelConsumption;
         this.fuelAmount = fuelAmount;
         this.brand = brand;
@@ -50,58 +51,50 @@ public class Car {
         System.out.println("You have " + remainingDistance + " kilometres left!");
     }
 
+
+    public void setEngine(Engine engine) {this.engine = engine;}
     public void setTankVolume(int tank) {
         tankVolume = tank;
     }
-
     public void setBrand(String brand) {
         this.brand = brand;
     }
-
     public void setColor(String color) {
         this.color = color;
     }
-
     public void setFuelAmount(int fuelAmount) {
         this.fuelAmount = fuelAmount;
     }
-
     public void setFuelConsumption(int fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
-
     public void setRemainingDistance(double remainingDistance) {
         this.remainingDistance = remainingDistance;
     }
-
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
 
+
+    public Engine getEngine() {return engine;}
     public double getRemainingDistance() {
         return remainingDistance;
     }
-
     public int getFuelAmount() {
         return fuelAmount;
     }
-
     public int getFuelConsumption() {
         return fuelConsumption;
     }
-
     public int getTankVolume() {
         return tankVolume;
     }
-
     public String getBrand() {
         return brand;
     }
-
     public String getColor() {
         return color;
     }
-
     public String getSerialNumber() {
         return serialNumber;
     }
