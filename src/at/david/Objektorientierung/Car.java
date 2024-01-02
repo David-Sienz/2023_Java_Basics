@@ -3,37 +3,40 @@ package at.david.Objektorientierung;
 public class Car {
     //Instanz / Gedächtnisvariablen
 
+    //don't do that later
     private Engine engine;
+    private Tank tank;
     private int fuelConsumption;
-    private int fuelAmount;
-    private int tankVolume;
     private String brand;
     private String serialNumber;
     private String color;
-    private double remainingDistance;
 
-
-    public Car(Engine engine, int fuelConsumption, int fuelAmount, String brand, String serialNumber, String color, int tankVolume) {
+    public Car(Engine engine, Tank tank, int fuelConsumption, String brand, String serialNumber, String color) {
         this.engine = engine;
+        this.tank = tank;
         this.fuelConsumption = fuelConsumption;
-        this.fuelAmount = fuelAmount;
         this.brand = brand;
         this.serialNumber = serialNumber;
         this.color = color;
-        this.tankVolume = tankVolume;
     }
 
-    public void drive() {
-        this.fuelAmount = this.fuelAmount - fuelConsumption;
-        System.out.println("I am driving!");
+    public void drive(int speed) {
+        if (speed >= 1 && speed <= 100) {
+            this.tank.fuelAmount -= this.fuelConsumption;
+            System.out.println("The car is driving with " + speed + "km/h");
+        } else if (speed > 100) {
+            System.out.println("The car is driving to fast");
+        } else {
+            System.out.println("The car is not driving");
+        }
     }
 
     public void brake() {
-        System.out.println("I am breaking!");
+        System.out.println("The car is breaking!");
     }
 
     public void turboBoost() {
-        if (fuelAmount > tankVolume * 0.1) {
+        if (this.tank.fuelAmount > this.tank.fuelAmount * 0.1) {
             System.out.println("SuperBoostMode is on.");
         } else {
             System.out.println("Not enough fuel to go to Superboost.");
@@ -47,55 +50,57 @@ public class Car {
     }
 
     public void getRemainingRange() {
-        this.remainingDistance = (double) this.fuelAmount / this.fuelConsumption;
-        System.out.println("You have " + remainingDistance + " kilometres left!");
+        double remainingDistance = (double) this.tank.fuelAmount / this.fuelConsumption;
+        System.out.println("The car has " + remainingDistance + " kilometres left!");
     }
 
+    //Setter
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
 
-    public void setEngine(Engine engine) {this.engine = engine;}
-    public void setTankVolume(int tank) {
-        tankVolume = tank;
+    public void setTank(Tank tank) {
+        this.tank = tank;
     }
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-    public void setColor(String color) {
-        this.color = color;
-    }
-    public void setFuelAmount(int fuelAmount) {
-        this.fuelAmount = fuelAmount;
-    }
+
     public void setFuelConsumption(int fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
-    public void setRemainingDistance(double remainingDistance) {
-        this.remainingDistance = remainingDistance;
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
+
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
 
-    public Engine getEngine() {return engine;}
-    public double getRemainingDistance() {
-        return remainingDistance;
+    //Getter
+    public Engine getEngine() {
+        return engine;
     }
-    public int getFuelAmount() {
-        return fuelAmount;
+
+    public Tank getFuelTank() {
+        return tank;
     }
+
     public int getFuelConsumption() {
         return fuelConsumption;
     }
-    public int getTankVolume() {
-        return tankVolume;
-    }
+
     public String getBrand() {
         return brand;
     }
-    public String getColor() {
-        return color;
-    }
+
     public String getSerialNumber() {
         return serialNumber;
+    }
+
+    public String getColor() {
+        return color;
     }
 }

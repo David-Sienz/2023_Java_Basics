@@ -6,24 +6,54 @@ public class Main {
         Engine e1 = new Engine(240, Engine.TYPE.GASOLINE);
         Engine e2 = new Engine(140, Engine.TYPE.DIESEL);
 
-        Car c1 = new Car(e1, 10, 100, "Porsche", "P912", "white", 150);
-        Car c2 = new Car(e2, 8, 90, "Nissan", "N112", "pink", 130);
+        Tank t1 = new Tank(10, 210);
+        Tank t2 = new Tank(40, 125);
+
+        Car c1 = new Car(e1, t1, 100, "Porsche", "P912", "white");
+        Car c2 = new Car(e2, t2, 90, "Nissan", "N112", "pink");
 
 
-        System.out.println(c1.getBrand());
-        c1.drive();
+        //DRIVE
+        System.out.println("Current fuel amount is " + c1.getFuelTank());
+        c2.drive(270);
+        System.out.println("Current fuel amount is " + c1.getFuelTank());
+        System.out.println("");
+        System.out.println("Current fuel amount is " + c2.getFuelTank());
+        c2.drive(250);
+        System.out.println("Current fuel amount is " + c2.getFuelTank());
+        System.out.println("");
+        System.out.println("");
+
+        //BRAKE
+        c1.brake();
+        System.out.println("");
+        c2.brake();
+        System.out.println("");
+        System.out.println("");
+
+        //TURBO-BOOST-MODE
+        System.out.print("Car 1: ");
         c1.turboBoost();
-        System.out.println(c1.getFuelAmount());
-        System.out.println(c1.getFuelAmount());
-        c1.honk(3);
-
-
-        System.out.println(c2.getBrand());
-        c2.drive();
+        System.out.println("");
+        System.out.print("Car 2: ");
         c2.turboBoost();
-        System.out.println(c2.getFuelAmount());
-        System.out.println(c2.getFuelAmount());
-        c2.honk(4);
+        System.out.println("");
+        System.out.println("");
 
+        //HONK
+        System.out.print("Car 1: ");
+        c1.honk(6);
+        System.out.println("");
+        System.out.print("Car 2: ");
+        c2.honk(3);
+        System.out.println("");
+        System.out.println("");
+
+        //GET-REMAINING-RANGE
+        System.out.print("Car 1: ");
+        c1.getRemainingRange();
+        System.out.println("");
+        System.out.print("Car 2: ");
+        c2.getRemainingRange();
     }
 }
