@@ -25,4 +25,3 @@ public class Tank {
         return tankVolume;
     }
 }
-

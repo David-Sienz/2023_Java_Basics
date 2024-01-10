@@ -21,26 +21,15 @@ public class Car {
     }
 
     public void drive(int speed) {
-        if (speed >= 1 && speed <= 100) {
-            this.tank.fuelAmount -= this.fuelConsumption;
-            System.out.println("The car is driving with " + speed + "km/h");
-        } else if (speed > 100) {
-            System.out.println("The car is driving to fast");
-        } else {
-            System.out.println("The car is not driving");
-        }
+        this.engine.drive(speed);
     }
 
     public void brake() {
         System.out.println("The car is breaking!");
     }
 
-    public void turboBoost() {
-        if (this.tank.fuelAmount > this.tank.fuelAmount * 0.1) {
-            System.out.println("SuperBoostMode is on.");
-        } else {
-            System.out.println("Not enough fuel to go to Superboost.");
-        }
+    public void turboBoost(){
+        this.engine.turboBoost();
     }
 
     public void honk(int amountOfRepetations) {
