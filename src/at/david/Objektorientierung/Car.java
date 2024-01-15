@@ -1,11 +1,15 @@
 package at.david.Objektorientierung;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car {
     //Instanz / Gedächtnisvariablen
 
     //don't do that later
     private Engine engine;
     private Tank tank;
+    private List<RearMirror> mirrors;
     private int fuelConsumption;
     private String brand;
     private String serialNumber;
@@ -18,6 +22,15 @@ public class Car {
         this.brand = brand;
         this.serialNumber = serialNumber;
         this.color = color;
+        this.mirrors = new ArrayList<>();
+    }
+
+    public List<RearMirror> getMirrors() {
+        return mirrors;
+    }
+
+    public void addMirror(RearMirror rearMirror){
+        this.mirrors.add(rearMirror);
     }
 
     public void drive(int speed) {

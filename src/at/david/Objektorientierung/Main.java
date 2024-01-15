@@ -8,9 +8,19 @@ public class Main {
         Engine e1 = new Engine(240, Engine.TYPE.GASOLINE, t1);
         Engine e2 = new Engine(140, Engine.TYPE.DIESEL, t2);
 
+        RearMirror r1 = new RearMirror(100, -10);
+        RearMirror r2 = new RearMirror(100, +10);
+
         Car c1 = new Car(e1, t1, 100, "Porsche", "P912", "white");
+        c1.addMirror(r1);
+        c1.addMirror(r2);
+
         Car c2 = new Car(e2, t2, 90, "Nissan", "N112", "pink");
 
+
+        //GET MIRRORS
+        System.out.println(c1.getMirrors().get(0).getPosition());
+        System.out.println("");
         //DRIVE
         System.out.println("Current fuel amount is " + c1.getFuelTank().getFuelAmount());
         c2.drive(270);
