@@ -1,4 +1,4 @@
-package at.david.Objektorientierung;
+package at.david.Objektorientierung.Car;
 
 public class RearMirror {
     private int size;

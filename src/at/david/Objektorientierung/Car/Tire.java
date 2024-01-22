@@ -1,4 +1,4 @@
-package at.david.Objektorientierung;
+package at.david.Objektorientierung.Car;
 
 public class Tire {
     private double tirepressure;
