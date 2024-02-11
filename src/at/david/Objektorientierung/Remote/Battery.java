@@ -11,4 +11,9 @@ public class Battery {
     public int getChargingStatus() {
         return chargingStatus;
     }
+
+    public void setChargingStatus(int chargingStatus) {
+        this.chargingStatus = chargingStatus;
+    }
+
 }

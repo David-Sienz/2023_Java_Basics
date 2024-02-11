@@ -26,16 +26,31 @@ public class Remote {
         System.out.println("Der Ladestatus der beiden Batterien beträgt: " + average);
     }
 
-    public void turnOn(){
+    public void turnOn() {
         isOn = true;
-        int chargingStatus = batteries.get(0).getChargingStatus();
-        int chargingStatus1 = chargingStatus * 0,95;
 
+        double chargingStatusBattery1 = batteries.get(0).getChargingStatus();
+        double chargingStatus1 = chargingStatusBattery1 - 5;
+        batteries.get(0).setChargingStatus((int) chargingStatus1);
 
+        double chargingStatusBattery2 = batteries.get(1).getChargingStatus();
+        double chargingStatus2 = chargingStatusBattery2 - 5;
+        batteries.get(1).setChargingStatus((int) chargingStatus2);
 
+        if (chargingStatus1 < 5 || chargingStatus2 < 5) {
+            hasPower = false;
+            isOn = false;
+            System.out.println("Mindestens eine der beiden Batterien ist nicht ausreichend aufgeladen");
+        } else {
+            System.out.println("Batterie 1: Verbraucher ist angeschlossen! ");
+            System.out.println("Batterie 2: Verbraucher ist angeschlossen! ");
+        }
     }
 
-    public void turnOff(){
 
+    public void turnOff(){
+        isOn = false;
+        System.out.println("Batterie 1: Verbraucher ist nicht angeschlossen! ");
+        System.out.println("Batterie 2: Verbraucher ist nicht angeschlossen! ");
     }
 }

@@ -12,5 +12,9 @@ public class Main {
 
 
         r1.getStatus();
+        r1.turnOn();
+        r1.getStatus();
+        r1.turnOff();
+        r1.getStatus();
     }
 }
