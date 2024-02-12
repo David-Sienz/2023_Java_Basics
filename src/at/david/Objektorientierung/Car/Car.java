@@ -36,6 +36,7 @@ public class Car {
     }
 
     public void addTire(Tire tires) {this.tires.add(tires);}
+
     public void addMirror(RearMirror rearMirror){
         this.mirrors.add(rearMirror);
     }
