@@ -6,8 +6,16 @@ public class Main {
 
         Engine e1 = new Engine(Engine.type.DIESEL, 100);
 
-        Car c1 = new Car(e1, 240, 100000, "black", 1, m1,100);
+        Car c1 = new Car(e1, 240, 40000, "black", 5, m1, 80000);
 
-        System.out.println(c1.getPrice());
+
+        //get price
+        c1.getPrice();
+        c1.getDiscountedPrice();
+
+
+        //get fuel consumption
+        c1.getFuelConsumption();
+
     }
 }

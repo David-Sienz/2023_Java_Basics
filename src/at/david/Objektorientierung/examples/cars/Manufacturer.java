@@ -8,7 +8,7 @@ public class Manufacturer {
     public Manufacturer(String name, String country, double discount) {
         this.name = name;
         this.country = country;
-        this.discount = discount;
+        this.discount = 1 - discount;
     }
 
     public String getName() {

@@ -19,6 +19,21 @@ public class Car {
         this.mileage = mileage;
     }
 
+    public void getDiscountedPrice(){
+        double discountedPrice = this.price * this.manufacturer.getDiscount();
+        System.out.println("The discounted price is: " + discountedPrice + " €");
+    }
+
+    public void getFuelConsumption(){
+        double fuelConsumption = 0;
+        if(mileage < 50000){
+            fuelConsumption = this.baseConsumption;
+        } else{
+            fuelConsumption = (this.baseConsumption * 1.098);
+        }
+        System.out.println(fuelConsumption);
+    }
+
     public Engine getEngine() {
         return engine;
     }
@@ -35,8 +50,8 @@ public class Car {
         this.topSpeed = topSpeed;
     }
 
-    public double getPrice() {
-        return price;
+    public void getPrice() {
+        System.out.println("The base price is: " + this.price + "€");
     }
 
     public void setPrice(double price) {

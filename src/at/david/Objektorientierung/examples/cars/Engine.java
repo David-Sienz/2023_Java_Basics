@@ -1,9 +1,7 @@
 package at.david.Objektorientierung.examples.cars;
 
-import at.david.Objektorientierung.Car.Tank;
 
 public class Engine {
-
     public enum type {DIESEL, GASOLINE};
     private type type;
     private int horsePower;
