@@ -1,46 +1,49 @@
 package at.david.Objektorientierung.examples.lamp;
-
-import java.util.List;
+import java.util.ArrayList;
 
 public class Lamp {
-    private List<LightElement> lightElement;
-    private String name;
+    private ArrayList<LightElement> lightElement;
 
-    public Lamp(List<LightElement> lightElement, String name) {
-        this.lightElement = lightElement;
-        this.name = name;
+    public Lamp() {
+        this.lightElement = new ArrayList<>();
     }
 
     public void addLightElement(LightElement lightElement){
-
+        this.lightElement.add(lightElement);
     }
 
     public void turnAllOn(){
-
+        for (LightElement lightElement : this.lightElement) {
+            lightElement.turnOn();
+        }
+        System.out.println("Alle Lichtelemente sind angeschalten");
     }
+
+    public void turnAllOff(){
+        for (LightElement lightElement : this.lightElement) {
+            lightElement.turnOff();
+        }
+        System.out.println("Alle Lichtelemente sind ausgeschalten");
+    }
+
 
     public double getOverallPowerUsage(){
+        double getOverallPowerUsage = 0;
+        for (LightElement lightElement: this.lightElement) {
+            getOverallPowerUsage = getOverallPowerUsage + lightElement.getPower_consumption();
+        }
 
+        System.out.println(getOverallPowerUsage);
+        return getOverallPowerUsage;
     }
 
-    public void printNamesOfLightElements(){
-
-    }
-
-
-    public List<LightElement> getLightElement() {
+    public ArrayList<LightElement> getLightElement() {
         return lightElement;
     }
 
-    public void setLightElement(List<LightElement> lightElement) {
+    public void setLightElement(ArrayList<LightElement> lightElement) {
         this.lightElement = lightElement;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }
