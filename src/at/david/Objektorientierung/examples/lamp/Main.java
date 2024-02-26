@@ -13,6 +13,7 @@ public class Main {
         l1.turnAllOn();
         l1.getOverallPowerUsage();
         l1.turnAllOff();
+        l1.printNamesOfLightElements();
 
 
 

@@ -12,6 +12,12 @@ public class Lamp {
         this.lightElement.add(lightElement);
     }
 
+    public void printNamesOfLightElements() {
+        for (LightElement lightElement : lightElement) {
+            System.out.println(lightElement.getName());
+        }
+    }
+
     public void turnAllOn(){
         for (LightElement lightElement : this.lightElement) {
             lightElement.turnOn();
