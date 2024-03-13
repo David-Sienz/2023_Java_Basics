@@ -11,7 +11,12 @@ public class Camera {
 
     public void makePicture(String extension, String name){
         PhoneFile phoneFile = new PhoneFile(extension, resolution*resolution, name);
-        sdCard.saveFile(phoneFile);
+
+        if (phoneFile.getSize()<=sdCard.getFreeSpace()){
+            sdCard.saveFile(phoneFile);
+        } else{
+            System.out.println("Das Bild kann nicht gespeichert werden, da es keinen freien Speicherplatz gibt.");
+        }
     }
 
     public int getResolution() {

@@ -17,6 +17,18 @@ public class Phone {
         camera.makePicture(extension, name);
     }
 
+    public void makeCall(String number){
+        sim.callNumber(number);
+    }
+
+    public int getFreeSpace(){
+        return sdCard.getFreeSpace();
+    }
+
+    public void printAllFiles(){
+        sdCard.getAllFiles();
+    }
+
     public void getAllFiles(){
         sdCard.getAllFiles();
     }

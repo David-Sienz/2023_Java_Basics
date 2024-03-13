@@ -12,8 +12,18 @@ public class SD_Card {
         this.phoneFile = new ArrayList<>();
     }
 
-    public void saveFile(PhoneFile phoneFile){
-        this.phoneFile.add(phoneFile);
+    public void saveFile(PhoneFile file) {
+        if (this.capacity > 0) {
+            if (file.getSize() > this.capacity) {
+                System.out.println("Die Datei " + file.getName() + " ist zu groß!");
+            } else {
+                this.phoneFile.add(file);
+                this.capacity = this.capacity - file.getSize();
+                System.out.println("Du hast die Datei: " + file.getName() + " gespeichert");
+            }
+        } else {
+            System.out.println("Du kannst die Datei: " + file.getName() + " nicht speichern!");
+        }
     }
 
     public void getAllFiles(){
@@ -23,14 +33,7 @@ public class SD_Card {
     }
 
     public int getFreeSpace(){
-        int sum = 0;
-        for (PhoneFile phoneFile: phoneFile) {
-            sum += phoneFile.getSize();
-        }
-
-        int freeSpace = sum - this.capacity;
-
-        return freeSpace;
+        return capacity;
     }
 
     public int getCapacity() {
